@@ -6,6 +6,8 @@
 * Angular Docs : [https://docs.angularjs.org/api](https://docs.angularjs.org/api)
 * Angular Guide : [https://docs.angularjs.org/guide](https://docs.angularjs.org/guide)
 * Angular Tutorial : [https://docs.angularjs.org/tutorial](https://docs.angularjs.org/tutorial)
+* Formation vidéo (en) : [http://campus.codeschool.com/courses/shaping-up-with-angular-js/](http://campus.codeschool.com/courses/shaping-up-with-angular-js/)
+* Formation vidéo (fr) : [http://www.grafikart.fr/formation/angularjs](http://www.grafikart.fr/formation/angularjs)
 
 ####Divers
 
