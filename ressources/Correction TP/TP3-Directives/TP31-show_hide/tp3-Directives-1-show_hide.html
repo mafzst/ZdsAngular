@@ -1,0 +1,30 @@
+<!DOCTYPE html charset="UTF-8">
+<html ng-app="zesteStore">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
+  </head>
+
+  <body ng-controller="StoreController as store">
+    <!--  Store Header  -->
+    <header>
+      <h1 class="text-center">Les zestes en folie</h1>
+      <h2 class="text-center">– by AngularJS –</h2>
+    </header>
+
+    <!--  Products Container  -->
+    <div class="list-group">
+      <!--  Product Container  -->
+      <div class="list-group-item">
+        <h3>{{store.product.name}} 
+          <em class="pull-right" ng-show="store.product.stock > 0">{{store.product.price}} €/kg &mdash; {{store.product.stock}} en stock</em>
+          <em class="pull-right" ng-hide="store.product.stock > 0">Indisponible !</em>
+        </h3>
+        <blockquote>{{store.product.description}}</blockquote>
+      </div>        
+    </div>
+
+    <script type="text/javascript" src="./js/angular.min.js"></script>
+    <script type="text/javascript" src="./js/tp3-1.js"></script>
+  </body>
+</html>
