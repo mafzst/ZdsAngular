@@ -12,13 +12,29 @@
       <h2 class="text-center">– by AngularJS –</h2>
     </header>
 
+    <div class="cart">
+      <div class="cart-label">
+        <p>Pannier</p>
+      </div>
+      <div class="cart-count">
+        <p>{{store.cart}}</p>
+      </div>
+    </div>
+
+    <div class="alert alert-cart alert-dismissable" role="alert" ng-show="store.notifEnabled">
+      <button type="button" class="close" ng-click="store.notifEnabled=false">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <b>1 {{store.addedArticle}}</b> à bien été ajouté à votre panier
+    </div>
+
     <!--  Products Container  -->
     <div class="list-group">
       <!--  Product Container  -->
       <div class="list-group-item" ng-repeat="product in store.products">
         <h3>
           {{product.name}} 
-          <em class="pull-right" ng-show="product.stock > 0">{{product.price | currency}} &mdash; {{product.stock}} en stock</em>
+          <em class="pull-right" ng-show="product.stock > 0">{{product.price}} €/kg &mdash; {{product.stock}} en stock</em>
           <em class="pull-right" ng-hide="product.stock > 0">Indisponible !</em>
         </h3>
 
@@ -36,6 +52,7 @@
 
         <!-- Product Tabs  -->
         <section ng-controller="TabController as tab">
+          <button class="btn btn-primary pull-right" ng-show="product.stock > 0" ng-click="store.setAddedArticle(product.name); tab.setTab(3)">Ajouter au panier</button>
           <ul class="nav nav-pills">
             <li ng-class="{ active:tab.isSet(1) }">
               <a href ng-click="tab.setTab(1)">Description</a>
@@ -57,7 +74,11 @@
           <!--  Spec Tab's Content  -->
           <div ng-show="tab.isSet(2)">
             <h4>Caractéristiques</h4>
-            <blockquote></blockquote>
+            <blockquote>
+              <strong>Diamètre : </strong>{{product.specs.diam}} <br />
+              <strong>Couleur : </strong>{{product.specs.color}} <br />
+              <strong>Acidité : </strong>{{product.specs.acid}} <br />
+            </blockquote>
           </div>
 
           <!--  Review Tab's Content  -->

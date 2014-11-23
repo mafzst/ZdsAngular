@@ -3,6 +3,18 @@
 
   app.controller('StoreController', function() {
     this.products = fruits;
+
+    this.notifEnabled = false;
+
+    this.cart = 0;
+
+    this.addedArticle = null;
+
+    this.setAddedArticle = function(name) {
+      this.addedArticle = name;
+      this.notifEnabled = true;
+      this.cart = this.cart + 1;
+    }
   });
 
   app.controller("TabController", function() {
@@ -44,6 +56,11 @@
         "img/clem1.png",
         "img/clem2.png"
       ],
+      specs: {
+        diam: '10cm',
+        color: 'Orange',
+        acid: 'Moyenne'
+      },
       reviews: [{
         stars: 5,
         body: "I love this !",
@@ -59,6 +76,11 @@
         "img/citron1.png",
         "img/citron2.png"
       ],
+      specs: {
+        diam: '7cm',
+        color: 'Jaune',
+        acid: 'Forte'
+      },
       reviews: [{
         stars: 3,
         body: "Bof !",
@@ -74,6 +96,11 @@
         "img/pamp1.png",
         "img/pamp2.png"
       ],
+      specs: {
+        diam: '15cm',
+        color: 'Orangé / Rose',
+        acid: 'Faible'
+      },
       reviews: [{
         stars: 5,
         body: "Trooop booon j'adooooore !!!",
